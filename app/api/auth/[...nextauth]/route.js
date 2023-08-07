@@ -1,10 +1,10 @@
 import connectToDb from '@/lib/mongodb';
 import User from '@/models/user';
-import NextAuth from 'next-auth';
+import NextAuth, { User as UserAccount, Account } from 'next-auth';
 import GoogleProvider from 'next-auth/providers/google';
 
-const clientId = process.env.GOOGLE_CLIENT_ID as string;
-const clientSecret = process.env.GOOGLE_CLIENT_SECRET as string;
+const clientId = process.env.GOOGLE_CLIENT_ID;
+const clientSecret = process.env.GOOGLE_CLIENT_SECRET;
 
 const handler = NextAuth({
   providers: [
